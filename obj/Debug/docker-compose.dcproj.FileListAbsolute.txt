@@ -1,0 +1,1 @@
+C:\Users\Maximo\source\repos\SWWebApplication2\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

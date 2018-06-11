@@ -30,3 +30,4 @@ C:\Users\Maximo\source\repos\SWWebApplication2\SWWebApplication2\obj\Debug\netco
 C:\Users\Maximo\source\repos\SWWebApplication2\SWWebApplication2\obj\Debug\netcoreapp2.1\SWWebApplication2.pdb
 C:\Users\Maximo\source\repos\SWWebApplication2\SWWebApplication2\obj\Debug\netcoreapp2.1\SWWebApplication2.csproj.CopyComplete
 C:\Users\Maximo\source\repos\SWWebApplication2\SWWebApplication2\obj\Debug\netcoreapp2.1\SWWebApplication2.csprojAssemblyReference.cache
+C:\Users\Maximo\source\repos\SWWebApplication2\SWWebApplication2\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

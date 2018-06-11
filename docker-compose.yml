@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  swwebapplication2:
+    image: ${DOCKER_REGISTRY}swwebapplication2
+    build:
+      context: .
+      dockerfile: SWWebApplication2\Dockerfile
