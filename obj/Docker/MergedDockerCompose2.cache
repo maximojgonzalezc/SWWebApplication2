@@ -1,0 +1,34 @@
+services:
+  swwebapplication2:
+    build:
+      context: C:\Users\Maximo\source\repos\SWWebApplication2
+      dockerfile: SWWebApplication2/Dockerfile
+      target: base
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44323'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: swwebapplication2:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  bin/Debug/netcoreapp2.1/SWWebApplication2.dll'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/bash -c "if PID=$$(pidof
+        -x dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 60644
+      target: 80
+    - published: 44323
+      target: 443
+    volumes:
+    - /c/Users/Maximo/source/repos/SWWebApplication2/SWWebApplication2:/app:rw
+    - /c/Users/Maximo/vsdbg/vs2017u5:/remote_debugger:ro
+    - /c/Users/Maximo/AppData/Roaming/ASP.NET/Https:/root/.aspnet/https:ro
+    - /c/Users/Maximo/AppData/Roaming/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    - /c/Program Files/dotnet/sdk/NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - /c/Users/Maximo/.nuget/packages:/root/.nuget/packages:ro
+version: '3.4'

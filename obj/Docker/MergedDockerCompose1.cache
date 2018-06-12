@@ -1,0 +1,19 @@
+services:
+  swwebapplication2:
+    build:
+      context: C:\Users\Maximo\source\repos\SWWebApplication2
+      dockerfile: SWWebApplication2/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44323'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: swwebapplication2
+    ports:
+    - published: 60644
+      target: 80
+    - published: 44323
+      target: 443
+    volumes:
+    - /c/Users/Maximo/AppData/Roaming/ASP.NET/Https:/root/.aspnet/https:ro
+    - /c/Users/Maximo/AppData/Roaming/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
